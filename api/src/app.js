@@ -13,6 +13,7 @@ const server = express();
 var whitelist = ['https://main--phenomenal-pony-798c98.netlify.app', 'https://63eeeec6437ff10eb81c48ae--gorgeous-beignet-497ad4.netlify.app']
 var corsOptions = {
   origin: function (origin, callback) {
+    console.log("origin: " + origin)
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true)
     } else {
@@ -27,7 +28,7 @@ server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 server.use(bodyParser.json({ limit: '50mb' }));
 server.use(cookieParser());
 server.use(morgan('dev'));
-server.use(cors());
+server.use(cors(corsOptions));
 //server.use((req, res, next) => {
   // res.header('Access-Control-Allow-Origin', 'https://main--phenomenal-pony-798c98.netlify.app'); // update to match the domain you will make the request from
 //   res.header('Access-Control-Allow-Credentials', 'true');
