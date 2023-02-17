@@ -10,7 +10,7 @@ require('./db.js');
 
 const server = express();
 
-var whitelist = ['https://main--phenomenal-pony-798c98.netlify.app', 'https://63eeeec6437ff10eb81c48ae--gorgeous-beignet-497ad4.netlify.app']
+var whitelist = ['https://cosquinquiz.netlify.app', 'https://siglo21quiz.netlify.app','https://main--gorgeous-beignet-497ad4.netlify.app']
 var corsOptions = {
   origin: function (origin, callback) {
     console.log("origin: " + origin)
