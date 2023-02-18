@@ -11,7 +11,7 @@ const { route } = require('./jugadores');
 const router = Router();
 
 
-router.get("/",async(req,res)=>{
+router.get("/avalian",async(req,res)=>{
   console.log(Jugadores)
  try {
   let allJugadores= await Jugadores.findAll();
@@ -21,7 +21,7 @@ router.get("/",async(req,res)=>{
  }
 })
 
-router.post("/",async(req, res)=>{
+router.post("/avalian",async(req, res)=>{
   try {
     console.log("estoy en el post")
     const{puntuacion,nombre,email}=req.body;
